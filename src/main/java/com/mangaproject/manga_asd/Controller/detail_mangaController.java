@@ -35,18 +35,17 @@ public class detail_mangaController {
         List<Detail_manga> details = detaild.findAll();
 
         for (Detail_manga detail : details) {
-    
             if (detail.getIdUserFK() != null) {
                 detail.setIdUserFKName(detail.getIdUserFK().getName());
             }
-
-
             if (detail.getIdMangaFK() != null) {
                 detail.setIdMangaFKName(detail.getIdMangaFK().getTitle());
             }
         }
-
         return details;
     }
+
+    
+
 
 }

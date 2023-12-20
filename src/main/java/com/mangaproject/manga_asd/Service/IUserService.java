@@ -9,4 +9,6 @@ public interface IUserService {
 
     List<User> findAll();
 
+    User authenticate(String email, String password);
+
 }

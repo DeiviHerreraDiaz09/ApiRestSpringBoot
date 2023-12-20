@@ -24,9 +24,8 @@ public class mangaController {
 
     @PostMapping("/add")
     public Manga addManga(@RequestBody Manga manga) {
-        
+    
         log.info("Añadiendo un nuevo manga "+ manga.getTitle());
-
         return mangad.save(manga);
     }
     

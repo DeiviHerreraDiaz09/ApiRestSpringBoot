@@ -24,4 +24,12 @@ public class _UserServiceImpl implements IUserService{
     public List<User> findAll() {
         return (List<User>) userrepository.findAll();
     }
+
+    @Override
+    public User authenticate(String email, String password) {
+        
+        User user = userrepository.findByEmailAndPassword(email, password);
+        return user;
+    }
+
 }

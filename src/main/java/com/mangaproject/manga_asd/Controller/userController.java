@@ -44,25 +44,25 @@ public class userController {
 
      // 2. IMPLEMENTACIÓN DE LOGIN CON JWT
 
-    @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody User user) {
+     @PostMapping("/login")
+     public ResponseEntity<?> loginUser(@RequestBody User user) {
         
-        User authenticatedUser = user;
-
-        if (authenticatedUser != null) {
-            final String jwt = jwtUtil.generateToken(authenticatedUser); 
-
-            Map<String, String> response = new HashMap<>();
-            response.put("token", jwt);
-
-            return ResponseEntity.ok(response);
-        } else {
-
-            Map<String, String> response = new HashMap<>();
-            response.put("error", "Autenticación fallida");
-            return ResponseEntity.badRequest().body(response);
-        }
-    }
+         User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
+     
+         if (authenticatedUser != null) {
+             final String jwt = jwtUtil.generateToken(authenticatedUser);
+     
+             Map<String, String> response = new HashMap<>();
+             response.put("token", jwt);
+     
+             return ResponseEntity.ok(response);
+         } else {
+             Map<String, String> response = new HashMap<>();
+             response.put("error", "Autenticación fallida");
+             return ResponseEntity.badRequest().body(response);
+         }
+     }
+     
     
 
 }

@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,12 @@ import lombok.Setter;
 @Entity
 @Table(name = "detail_manga")
 public class Detail_manga {
+
+    @Transient
+    private String idUserFKName;
+
+    @Transient
+    private String idMangaFKName;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,4 +54,26 @@ public class Detail_manga {
 
     public Detail_manga(){}
     
+    // Métodos especificos
+
+    public void setUserFK(User user) {
+        this.idUserFK = user;
+    }
+
+    public String getIdUserFKName() {
+        return idUserFKName;
+    }
+
+    public void setIdUserFKName(String idUserFKName) {
+        this.idUserFKName = idUserFKName;
+    }
+
+    public String getIdMangaFKName() {
+        return idMangaFKName;
+    }
+
+    public void setIdMangaFKName(String idMangaFKName) {
+        this.idMangaFKName = idMangaFKName;
+    }
+
 }

@@ -26,7 +26,7 @@ public class Manga {
     private String description;
 
     @Column(name = "image", nullable = false)
-    private Long image; 
+    private String image; 
 
     @Column(name = "amount", nullable = false)
     private Integer amount; 
@@ -34,7 +34,7 @@ public class Manga {
     @Column(name = "price", nullable = false)
     private Integer price;
 
-    public Manga(Integer idManga, String description, Long image, Integer amount, Integer price) {
+    public Manga(Integer idManga, String description, String image, Integer amount, Integer price) {
         this.idManga = idManga;
         this.description = description;
         this.image = image;

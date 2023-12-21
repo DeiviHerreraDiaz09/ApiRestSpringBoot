@@ -6,7 +6,6 @@ import com.mangaproject.manga_asd.Service.IUserService;
 import com.mangaproject.manga_asd.Service.JwtVerificationService;
 import com.mangaproject.manga_asd.Utils.JwtUtil;
 
-import io.jsonwebtoken.Jws;
 import lombok.extern.java.Log;
 
 import org.springframework.beans.factory.annotation.Autowired;

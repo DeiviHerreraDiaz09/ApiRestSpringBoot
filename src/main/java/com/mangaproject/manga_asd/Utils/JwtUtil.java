@@ -3,7 +3,6 @@ package com.mangaproject.manga_asd.Utils;
 import java.security.Key;
 import java.sql.Date;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jws;

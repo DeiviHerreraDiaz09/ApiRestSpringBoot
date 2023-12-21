@@ -20,7 +20,6 @@ public class _JwtVerification implements JwtVerificationService{
     }
 
 
-
     @Override
     public ResponseEntity<?> verifyToken(String jwtToken) {
         if (jwtToken == null || !jwtToken.startsWith("Bearer ")) {

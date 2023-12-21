@@ -3,6 +3,7 @@ package com.mangaproject.manga_asd.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import lombok.extern.java.Log;
 
 @Log
 @RestController
+@CrossOrigin(origins = "http://localhost:8100")
 @RequestMapping("/api/details")
 public class detail_mangaController {
     

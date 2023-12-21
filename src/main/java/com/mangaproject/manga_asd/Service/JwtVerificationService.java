@@ -6,5 +6,5 @@ public interface JwtVerificationService {
 
     ResponseEntity<?> verifyToken(String jwtToken);
 
-
+    String extractUserRole(String jwtToken);
 }

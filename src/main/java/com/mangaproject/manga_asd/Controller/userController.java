@@ -22,7 +22,6 @@ import java.util.Map;
 @RequestMapping("/api/users")
 public class userController {
 
-
     @Autowired
     private IUserService userd;
 
@@ -36,9 +35,7 @@ public class userController {
      
     @PostMapping("/add")
     public User addUser(@RequestBody User user) {
-        
-        log.info("Añadiendo un nuevo usuario:" + user.getEmail());
-        
+        log.info("Añadiendo un nuevo usuario:" + user.getEmail());        
         return userd.save(user);
     }
 
@@ -56,10 +53,10 @@ public class userController {
          User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
      
          if (authenticatedUser != null) {
-             final String jwt = jwtUtil.generateToken(authenticatedUser);
+             final String adminToken = jwtUtil.generateToken("adminUsername",authenticatedUser.getRole() );
      
              Map<String, String> response = new HashMap<>();
-             response.put("token", jwt);
+             response.put("token", adminToken);
      
              return ResponseEntity.ok(response);
          } else {

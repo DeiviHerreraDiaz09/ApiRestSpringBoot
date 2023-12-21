@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mangaproject.manga_asd.Utils.JwtUtil;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 
 @Service
@@ -40,6 +41,23 @@ public class _JwtVerification implements JwtVerificationService{
             Map<String, String> response = new HashMap<>();
             response.put("error", "Token no válido");
             return ResponseEntity.badRequest().body(response);
+        }
+    }
+
+    @Override
+    public String extractUserRole(String jwtToken) {
+        if (jwtToken == null || !jwtToken.startsWith("Bearer ")) {
+            return null;
+        }
+
+        String token = jwtToken.substring(7);
+
+        Jws<Claims> claims = jwtUtil.validateToken(token);
+
+        if (claims != null) {
+            return claims.getBody().get("role", String.class);
+        } else {
+            return null;
         }
     }
     

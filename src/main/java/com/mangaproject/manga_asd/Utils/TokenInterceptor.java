@@ -30,7 +30,7 @@ public class TokenInterceptor implements HandlerInterceptor {
      
             return true;
         } else {
-     
+       
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.getWriter().write("Token no válido");
             return false;

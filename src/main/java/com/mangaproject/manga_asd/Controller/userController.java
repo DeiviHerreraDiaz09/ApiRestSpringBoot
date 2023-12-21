@@ -1,9 +1,12 @@
 package com.mangaproject.manga_asd.Controller;
 
 
-import com.mangaproject.Utils.JwtUtil;
 import com.mangaproject.manga_asd.Model.User;
 import com.mangaproject.manga_asd.Service.IUserService;
+import com.mangaproject.manga_asd.Service.JwtVerificationService;
+import com.mangaproject.manga_asd.Utils.JwtUtil;
+
+import io.jsonwebtoken.Jws;
 import lombok.extern.java.Log;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,7 @@ import java.util.Map;
 
 @Log
 @RestController
+@CrossOrigin(origins = "http://localhost:8100")
 @RequestMapping("/api/users")
 public class userController {
 
@@ -25,6 +29,9 @@ public class userController {
 
     @Autowired
     private JwtUtil jwtUtil;
+
+    @Autowired
+    private JwtVerificationService jwtVerificationService;
 
     // 1. USUARIOS PUEDAN REGISTRARSE EN LA PLATAFORMA
      
@@ -62,6 +69,12 @@ public class userController {
              return ResponseEntity.badRequest().body(response);
          }
      }
+
+     @GetMapping("/verificar")
+    public ResponseEntity<?> token(@RequestHeader(name = "Authorization") String jwtToken) {
+        return jwtVerificationService.verifyToken(jwtToken);
+    }
+
      
     
 

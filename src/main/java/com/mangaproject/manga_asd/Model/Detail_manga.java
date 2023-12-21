@@ -41,7 +41,7 @@ public class Detail_manga {
     private User idUserFK;
 
     @ManyToOne
-    @JoinColumn(name = "idMangaFK", nullable = false)
+    @JoinColumn(name = "id_mangafk", nullable = false)
     private Manga idMangaFK;
 
     public Detail_manga(Integer idDetail_ma, Date fechaAlquiler, Date fechaDevolucion, User idUserFK, Manga idMangaFK) {

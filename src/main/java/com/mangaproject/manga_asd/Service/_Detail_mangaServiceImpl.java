@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mangaproject.manga_asd.Model.Detail_manga;
 import com.mangaproject.manga_asd.Repository.detailMangaRepository;
+// import com.mangaproject.manga_asd.Repository.mangaRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,6 +17,9 @@ public class _Detail_mangaServiceImpl implements IDetail_mangaService{
 
     @Autowired
     private detailMangaRepository detailmangarepository;
+
+    // @Autowired
+    // private mangaRepository mangarepository; 
 
     
     @Override

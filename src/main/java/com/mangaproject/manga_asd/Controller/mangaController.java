@@ -1,19 +1,22 @@
 package com.mangaproject.manga_asd.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mangaproject.manga_asd.Model.Manga;
 import com.mangaproject.manga_asd.Service.IMangaService;
-
 import lombok.extern.java.Log;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Log
 @RestController
+@CrossOrigin(origins = "http://localhost:8100")
 @RequestMapping("/api/mangas")
 public class mangaController {
     
@@ -27,6 +30,12 @@ public class mangaController {
     
         log.info("Añadiendo un nuevo manga "+ manga.getTitle());
         return mangad.save(manga);
+    }
+
+    @GetMapping("/list")
+    public List<Manga> getAllUsers() {
+        log.info("Obteniendo todos los mangas");
+        return mangad.findAll();
     }
     
 

@@ -124,7 +124,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyNTE1MDQsImV4cCI6MTcwMzI4NzUwNH0.-AOSOSyC-Dbcfvlond0mUpqeoPNlJfWXPjCl3a7eYcY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzI3MTUwNSwiZXhwIjoxNzAzMzA3NTA1fQ.9mp2mfMNxCgBgjVfLT6dTlYlOpD8ychHW7KTquZDQgI",
 									"type": "string"
 								}
 							]
@@ -157,7 +157,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/dherrerad/Desktop/Carrooo.png"
+									"src": "/C:/Users/dherrerad/Pictures/Jujutsu_Kaisen.jpg"
 								},
 								{
 									"key": "file",
@@ -243,7 +243,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyNDQ5MjMsImV4cCI6MTcwMzI4MDkyM30.5-8-n8DtZYvq2QTbqXSn3DAJR25snV2AUdRsZE6-NjA",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzI3MjA3OCwiZXhwIjoxNzAzMzA4MDc4fQ.UDqcfNDjG9V1ZZSVybwnrmW44D1l3pagq5UyasbEOhg",
 									"type": "string"
 								}
 							]

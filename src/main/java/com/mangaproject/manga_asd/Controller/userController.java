@@ -56,6 +56,7 @@ public ResponseEntity<?> loginUser(@RequestBody User user) {
 
     if (authenticatedUser != null) {
         Integer userId = authenticatedUser.getIdUsuario();
+        String role = authenticatedUser.getRole();
 
         ArrayList<Object> token = new ArrayList<>();
 
@@ -63,9 +64,9 @@ public ResponseEntity<?> loginUser(@RequestBody User user) {
 
         final String adminToken = jwtUtil.generateToken(userId, "adminUsername", authenticatedUser.getRole());
 
-
         token.add(userId); 
         token.add(adminToken); 
+        token.add(role);
 
         Map<String, String> response = new HashMap<>();
         response.put("token", adminToken);

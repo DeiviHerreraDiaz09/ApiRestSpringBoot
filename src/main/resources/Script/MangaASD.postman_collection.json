@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ed6d701f-5c11-45a3-a408-d537cd5e9eb0",
+		"_postman_id": "a64faaeb-39cf-4cec-9ffc-472a79150202",
 		"name": "MangaASD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29313366"
+		"_exporter_id": "31959677"
 	},
 	"item": [
 		{
@@ -124,7 +124,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTQyNjAsImV4cCI6MTcwMzI1MDI2MH0.9TSjHRBaoS4TbSLbSrrqrF4ED33xTsMLXTSO-tMbOsc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyNTE1MDQsImV4cCI6MTcwMzI4NzUwNH0.-AOSOSyC-Dbcfvlond0mUpqeoPNlJfWXPjCl3a7eYcY",
 									"type": "string"
 								}
 							]
@@ -132,13 +132,40 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Goku\",\r\n    \"description\":\"Dragon Ball z\",\r\n    \"image\":\"imagen\",\r\n    \"amount\": 5,\r\n    \"price\": 1500\r\n    \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Goku",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Dragon Ball z\n",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/dherrerad/Desktop/Carrooo.png"
+								},
+								{
+									"key": "file",
+									"value": "asdsad",
+									"type": "text",
+									"disabled": true
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/mangas/add",
@@ -151,6 +178,53 @@
 								"api",
 								"mangas",
 								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer imagenes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"value": "Carrooo",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/mangas/image/Carrooo.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mangas",
+								"image",
+								"Carrooo.png"
 							]
 						}
 					},
@@ -169,7 +243,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTM2MTgsImV4cCI6MTcwMzI0OTYxOH0.JqnJ3gjvdmBSHKOGcnoCcJ0-molR9bX6vy6RWQZpUBg",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyNDQ5MjMsImV4cCI6MTcwMzI4MDkyM30.5-8-n8DtZYvq2QTbqXSn3DAJR25snV2AUdRsZE6-NjA",
 									"type": "string"
 								}
 							]
@@ -237,7 +311,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/details/3",
+							"raw": "http://localhost:8080/api/details/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -246,7 +320,7 @@
 							"path": [
 								"api",
 								"details",
-								"3"
+								"1"
 							]
 						}
 					},

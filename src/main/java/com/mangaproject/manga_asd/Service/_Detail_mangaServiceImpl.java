@@ -18,6 +18,10 @@ public class _Detail_mangaServiceImpl implements IDetail_mangaService{
     @Autowired
     private detailMangaRepository detailmangarepository;
 
+    @Autowired
+    private IDetail_mangaService detail_mangaService;
+
+
     @Override
     public Detail_manga save(Detail_manga detail_manga) {
         try {
@@ -32,6 +36,11 @@ public class _Detail_mangaServiceImpl implements IDetail_mangaService{
     @Override
     public List<Detail_manga> findAll() {
         return (List<Detail_manga>) detailmangarepository.findAll();
+    }
+
+    @Override
+    public List<Detail_manga> findByUserId(Integer userId) {
+        return detail_mangaService.findByUserId(userId);
     }
     
 }

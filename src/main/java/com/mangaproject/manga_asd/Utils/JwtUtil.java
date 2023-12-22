@@ -17,15 +17,17 @@ public class JwtUtil {
     
     private final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public String generateToken(Object subject, String role) {
+    public String generateToken(Integer userId, Object subject, String role) {
         return Jwts.builder()
                 .setSubject(subject.toString())
+                .claim("userId", userId) 
                 .claim("role", role)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) 
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
                 .signWith(SECRET_KEY)
                 .compact();
     }
+    
 
 
     public Jws<Claims> validateToken(String token) {

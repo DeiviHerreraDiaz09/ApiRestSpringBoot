@@ -11,4 +11,6 @@ public interface IDetail_mangaService {
 
     List<Detail_manga> findAll();
 
+    List<Detail_manga> findByUserId(Integer userId);
+
 }

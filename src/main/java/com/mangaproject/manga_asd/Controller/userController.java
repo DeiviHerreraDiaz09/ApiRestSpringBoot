@@ -47,29 +47,32 @@ public class userController {
 
      // 2. IMPLEMENTACIÓN DE LOGIN CON JWT
 
+     
      @PostMapping("/login")
-     public ResponseEntity<?> loginUser(@RequestBody User user) {
-        
-         User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
-     
+public ResponseEntity<?> loginUser(@RequestBody User user) {
+    User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
+
+    if (authenticatedUser != null) {
+        Integer userId = authenticatedUser.getIdUsuario();
+        log.info("Usuario autenticado con ID: " + userId);
+
+        final String adminToken = jwtUtil.generateToken(userId, "adminUsername", authenticatedUser.getRole());
+
+        Map<String, String> response = new HashMap<>();
+        response.put("token", adminToken);
+
+        return ResponseEntity.ok(response);
+    } else {
+        log.warning("Autenticación fallida para el usuario: " + user.getEmail());
+        Map<String, String> response = new HashMap<>();
+        response.put("error", "Autenticación fallida");
+
+        return ResponseEntity.badRequest().body(response);
+    }
+}
 
 
-         if (authenticatedUser != null) {
-             final String adminToken = jwtUtil.generateToken("adminUsername",authenticatedUser.getRole() );
-     
-             Map<String, String> response = new HashMap<>();
-             response.put("token", adminToken);
-     
-             return ResponseEntity.ok(response);
-         } else {
-             Map<String, String> response = new HashMap<>();
-             response.put("error", "Autenticación fallida");
-             
-             return ResponseEntity.badRequest().body(response);
-         }
 
-         
-     }
 
      @GetMapping("/verificar")
     public ResponseEntity<?> token(@RequestHeader(name = "Authorization") String jwtToken) {

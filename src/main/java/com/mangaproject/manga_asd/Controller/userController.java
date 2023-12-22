@@ -52,6 +52,8 @@ public class userController {
         
          User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
      
+
+
          if (authenticatedUser != null) {
              final String adminToken = jwtUtil.generateToken("adminUsername",authenticatedUser.getRole() );
      
@@ -62,8 +64,11 @@ public class userController {
          } else {
              Map<String, String> response = new HashMap<>();
              response.put("error", "Autenticación fallida");
+             
              return ResponseEntity.badRequest().body(response);
          }
+
+         
      }
 
      @GetMapping("/verificar")

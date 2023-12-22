@@ -15,7 +15,7 @@ public class WebMvcConfig implements WebMvcConfigurer  {
     public void addInterceptors(InterceptorRegistry registry) {
       
         registry.addInterceptor(tokenInterceptor)
-                .addPathPatterns("/api/mangas/asd"); 
+                .addPathPatterns("/api/details/list"); 
     }
 
 }

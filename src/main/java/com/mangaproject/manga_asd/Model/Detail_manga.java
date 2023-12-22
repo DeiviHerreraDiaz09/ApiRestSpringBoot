@@ -33,7 +33,7 @@ public class Detail_manga {
     @Column(name = "fechaAlquiler", nullable = false)
     private Date fechaAlquiler;
 
-    @Column(name = "fechaDevolucion", nullable = false)
+    @Column(name = "fechaDevolucion", nullable = true)
     private Date fechaDevolucion;
 
     @ManyToOne

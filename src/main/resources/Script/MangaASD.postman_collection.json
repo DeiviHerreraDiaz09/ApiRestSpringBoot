@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "ed6d701f-5c11-45a3-a408-d537cd5e9eb0",
+		"name": "MangaASD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29313366"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Dayana09\",\r\n    \"name\":\"Dayana\",\r\n    \"lastName\":\"Vargas\",\r\n    \"email\":\"Dayana09@g.com\",\r\n    \"phone\":\"3044028836\",\r\n    \"password\":\"123\",\r\n    \"role\":\"administrador\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login (Generar token)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Dayana09@g.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manga",
+			"item": [
+				{
+					"name": "Listar mangas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mangas/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mangas",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar manga (Administrador))",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTQyNjAsImV4cCI6MTcwMzI1MDI2MH0.9TSjHRBaoS4TbSLbSrrqrF4ED33xTsMLXTSO-tMbOsc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Goku\",\r\n    \"description\":\"Dragon Ball z\",\r\n    \"image\":\"imagen\",\r\n    \"amount\": 5,\r\n    \"price\": 1500\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/mangas/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mangas",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Detalles de manga",
+			"item": [
+				{
+					"name": "Listar detalles de manga",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTM2MTgsImV4cCI6MTcwMzI0OTYxOH0.JqnJ3gjvdmBSHKOGcnoCcJ0-molR9bX6vy6RWQZpUBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/details/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"details",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar detalle de manga (ALQUILAR))",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaAlquiler\":\"2023-01-09\",\r\n    \"fechaDevolucion\":\"\",\r\n    \"idUserFK\":{\r\n        \"idUsuario\":1\r\n    },\r\n    \"idMangaFK\":{\r\n        \"idManga\": 1\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/details/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"details",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar campo de devolución",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"fecha_devolucion\":\"2023-01-10\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/details/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"details",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

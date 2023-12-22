@@ -33,8 +33,8 @@ public class Detail_manga {
     @Column(name = "fechaAlquiler", nullable = false)
     private Date fechaAlquiler;
 
-    @Column(name = "fechaDevolucion", nullable = true)
-    private Date fechaDevolucion;
+    @Column(name = "fecha_devolucion", nullable = true)
+    private Date fecha_devolucion;
 
     @ManyToOne
     @JoinColumn(name = "idUserFK", nullable = false)
@@ -44,10 +44,10 @@ public class Detail_manga {
     @JoinColumn(name = "id_mangafk", nullable = false)
     private Manga idMangaFK;
 
-    public Detail_manga(Integer idDetail_ma, Date fechaAlquiler, Date fechaDevolucion, User idUserFK, Manga idMangaFK) {
+    public Detail_manga(Integer idDetail_ma, Date fechaAlquiler, Date fecha_devolucion, User idUserFK, Manga idMangaFK) {
         this.idDetail_ma = idDetail_ma;
         this.fechaAlquiler = fechaAlquiler;
-        this.fechaDevolucion = fechaDevolucion;
+        this.fecha_devolucion = fecha_devolucion;
         this.idUserFK = idUserFK;
         this.idMangaFK = idMangaFK;
     }

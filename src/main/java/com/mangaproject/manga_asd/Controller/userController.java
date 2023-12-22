@@ -1,6 +1,7 @@
 package com.mangaproject.manga_asd.Controller;
 
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.mangaproject.manga_asd.Model.User;
 import com.mangaproject.manga_asd.Service.IUserService;
 import com.mangaproject.manga_asd.Service.JwtVerificationService;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,14 +56,21 @@ public ResponseEntity<?> loginUser(@RequestBody User user) {
 
     if (authenticatedUser != null) {
         Integer userId = authenticatedUser.getIdUsuario();
+
+        ArrayList<Object> token = new ArrayList<>();
+
         log.info("Usuario autenticado con ID: " + userId);
 
         final String adminToken = jwtUtil.generateToken(userId, "adminUsername", authenticatedUser.getRole());
 
+
+        token.add(userId); 
+        token.add(adminToken); 
+
         Map<String, String> response = new HashMap<>();
         response.put("token", adminToken);
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(token);
     } else {
         log.warning("Autenticación fallida para el usuario: " + user.getEmail());
         Map<String, String> response = new HashMap<>();
@@ -70,8 +79,6 @@ public ResponseEntity<?> loginUser(@RequestBody User user) {
         return ResponseEntity.badRequest().body(response);
     }
 }
-
-
 
 
      @GetMapping("/verificar")

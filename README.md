@@ -26,7 +26,7 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
   - price (Integer): Precio del manga.
 - Encabezado de autorización: Token con el rol "administrador" requerido.
 - Ejemplo de solicitud usando Postman:
--jemplo de respuesta:
+Ejemplo de respuesta:
 
 ```
 "Manga creado exitosamente"

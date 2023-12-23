@@ -1,6 +1,6 @@
 # Manga Project API REST con Spring Boot
 ## Descripción General
-Este proyecto consiste en una API RESTful construida con Spring Boot para gestionar información de manga. Proporciona puntos finales para registrar y recuperar detalles de manga, manejar autenticación de usuario y gestionar detalles de alquiler de manga. La API está asegurada mediante Tokens Web JSON (JWT) para garantizar un control de acceso adecuado.
+Este proyecto consiste en una API REST construida con Spring Boot para gestionar información de manga. Proporciona puntos finales para registrar y recuperar detalles de manga, manejar autenticación de usuario y gestionar detalles de alquiler de manga. La API está asegurada mediante JSON Web Tokens (JWT) para garantizar un control de acceso adecuado.
 
 ## Inicio Rápido
 Para ejecutar el proyecto localmente, sigue estos pasos:

@@ -9,13 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer  {
     
 @Autowired
-    private TokenInterceptor tokenInterceptor;
+    // private TokenInterceptor tokenInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
       
-        registry.addInterceptor(tokenInterceptor)
-                .addPathPatterns("/api/details/list"); 
+
+        // Se comenta codigo para permitir permisos a la ruta 
+
+        // registry.addInterceptor(tokenInterceptor)
+        //         .addPathPatterns("/api/details/list"); 
     }
 
 }

@@ -10,7 +10,6 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
 ### 2. Abre el proyecto en tu IDE preferido.
 ### 3. Configura la conexión a la base de datos en el archivo application.properties.
 ### 4. Construye y ejecuta la aplicación Spring Boot.
-```./mvnw spring-boot:run```
 
 # Puntos finales de la API
 ## Operaciones de Manga

@@ -1,6 +1,5 @@
 package com.mangaproject.manga_asd.Controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.mangaproject.manga_asd.Model.User;
 import com.mangaproject.manga_asd.Service.IUserService;
 import com.mangaproject.manga_asd.Service.JwtVerificationService;

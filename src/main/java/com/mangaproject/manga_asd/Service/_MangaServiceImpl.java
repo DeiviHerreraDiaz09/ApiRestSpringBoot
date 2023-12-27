@@ -2,19 +2,12 @@ package com.mangaproject.manga_asd.Service;
 
 import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.mangaproject.manga_asd.Model.Manga;
 import com.mangaproject.manga_asd.Repository.mangaRepository;
-
 import io.jsonwebtoken.io.IOException;
 import lombok.extern.java.Log;
 
@@ -31,21 +24,6 @@ public class _MangaServiceImpl implements IMangaService{
 
     @Override
     public Manga save(Manga manga)   {
-
-        // String rutaImagen;
-        // try {
-        //     rutaImagen = saveImage(image);
-        //     manga.setImage(rutaImagen);
-
-        // } catch (IOException e) {
-            
-        //     e.printStackTrace();
-        // } catch (java.io.IOException e) {
-           
-        //     e.printStackTrace();
-        // }
-
-    
         return mangarepository.save(manga);
     }
 

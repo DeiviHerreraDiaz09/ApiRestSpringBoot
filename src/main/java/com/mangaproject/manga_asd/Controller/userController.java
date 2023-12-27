@@ -7,7 +7,6 @@ import com.mangaproject.manga_asd.Service.JwtVerificationService;
 import com.mangaproject.manga_asd.Utils.JwtUtil;
 
 import lombok.extern.java.Log;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +20,10 @@ import java.util.Map;
 @RestController
 @CrossOrigin(origins = "http://localhost:8100")
 @RequestMapping("/api/users")
-public class userController {
+public class UserController {
 
     @Autowired
-    private IUserService userd;
+    private IUserService userService;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -32,25 +31,21 @@ public class userController {
     @Autowired
     private JwtVerificationService jwtVerificationService;
 
-    // 1. USUARIOS PUEDAN REGISTRARSE EN LA PLATAFORMA
-
     @PostMapping("/add")
     public User addUser(@RequestBody User user) {
         log.info("Añadiendo un nuevo usuario:" + user.getEmail());
-        return userd.save(user);
+        return userService.save(user);
     }
 
     @GetMapping("/list")
     public List<User> getAllUsers() {
         log.info("Obteniendo todos los usuarios");
-        return userd.findAll();
+        return userService.findAll();
     }
-
-    // 2. IMPLEMENTACIÓN DE LOGIN CON JWT
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {
-        User authenticatedUser = userd.authenticate(user.getEmail(), user.getPassword());
+        User authenticatedUser = userService.authenticate(user.getEmail(), user.getPassword());
 
         if (authenticatedUser != null) {
             Integer userId = authenticatedUser.getIdUsuario();
@@ -80,8 +75,7 @@ public class userController {
     }
 
     @GetMapping("/verificar")
-    public ResponseEntity<?> token(@RequestHeader(name = "Authorization") String jwtToken) {
+    public ResponseEntity<?> verifyToken(@RequestHeader(name = "Authorization") String jwtToken) {
         return jwtVerificationService.verifyToken(jwtToken);
     }
-
 }

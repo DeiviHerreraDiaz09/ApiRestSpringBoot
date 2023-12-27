@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a64faaeb-39cf-4cec-9ffc-472a79150202",
+		"_postman_id": "ed6d701f-5c11-45a3-a408-d537cd5e9eb0",
 		"name": "MangaASD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31959677"
+		"_exporter_id": "29313366"
 	},
 	"item": [
 		{
@@ -124,7 +124,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzI3MTUwNSwiZXhwIjoxNzAzMzA3NTA1fQ.9mp2mfMNxCgBgjVfLT6dTlYlOpD8ychHW7KTquZDQgI",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTQyNjAsImV4cCI6MTcwMzI1MDI2MH0.9TSjHRBaoS4TbSLbSrrqrF4ED33xTsMLXTSO-tMbOsc",
 									"type": "string"
 								}
 							]
@@ -132,40 +132,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "title",
-									"value": "Goku",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "Dragon Ball z\n",
-									"type": "text"
-								},
-								{
-									"key": "amount",
-									"value": "5",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "1500",
-									"type": "text"
-								},
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/dherrerad/Pictures/Jujutsu_Kaisen.jpg"
-								},
-								{
-									"key": "file",
-									"value": "asdsad",
-									"type": "text",
-									"disabled": true
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Goku\",\r\n    \"description\":\"Dragon Ball z\",\r\n    \"image\":\"imagen\",\r\n    \"amount\": 5,\r\n    \"price\": 1500\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/mangas/add",
@@ -178,53 +151,6 @@
 								"api",
 								"mangas",
 								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Traer imagenes",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "imagen",
-									"value": "Carrooo",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/mangas/image/Carrooo.png",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"mangas",
-								"image",
-								"Carrooo.png"
 							]
 						}
 					},
@@ -243,7 +169,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzI3MjA3OCwiZXhwIjoxNzAzMzA4MDc4fQ.UDqcfNDjG9V1ZZSVybwnrmW44D1l3pagq5UyasbEOhg",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTM2MTgsImV4cCI6MTcwMzI0OTYxOH0.JqnJ3gjvdmBSHKOGcnoCcJ0-molR9bX6vy6RWQZpUBg",
 									"type": "string"
 								}
 							]
@@ -273,7 +199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fechaAlquiler\":\"2023-01-09\",\r\n    \"fechaDevolucion\":\"\",\r\n    \"idUserFK\":{\r\n        \"idUsuario\":1\r\n    },\r\n    \"idMangaFK\":{\r\n        \"idManga\": 1\r\n    }\r\n    \r\n}",
+							"raw": "[\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-09\",\r\n        \"fechaDevolucion\": \"\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        }\r\n    },\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-10\",\r\n        \"fechaDevolucion\": \"\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        }\r\n    }\r\n\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -311,7 +237,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/details/1",
+							"raw": "http://localhost:8080/api/details/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -320,7 +246,7 @@
 							"path": [
 								"api",
 								"details",
-								"1"
+								"3"
 							]
 						}
 					},

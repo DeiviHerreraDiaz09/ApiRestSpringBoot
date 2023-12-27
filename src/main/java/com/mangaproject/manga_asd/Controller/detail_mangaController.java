@@ -1,19 +1,11 @@
 package com.mangaproject.manga_asd.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.mangaproject.manga_asd.Model.Detail_manga;
 import com.mangaproject.manga_asd.Repository.detailMangaRepository;
 import com.mangaproject.manga_asd.Service.IDetail_mangaService;
@@ -33,12 +25,17 @@ public class detail_mangaController {
 
 
     @PostMapping("/add")
-    public Detail_manga addDetails(@RequestBody Detail_manga detail_manga) {
-       
-            log.info("Añadiendo un nuevo detalle de manga: "+ detail_manga.getFechaAlquiler());
-        
-        return detaild.save(detail_manga);
+    public ResponseEntity<Object> addDetails(@RequestBody List<Detail_manga> detail_mangaList) {
+    log.info("Añadiendo nuevos detalles de manga");
+
+    List<Detail_manga> savedDetails = new ArrayList<>();
+
+    for (Detail_manga detail_manga : detail_mangaList) {
+        savedDetails.add(detaild.save(detail_manga));
     }
+
+    return new ResponseEntity<>(savedDetails, HttpStatus.OK);
+}
 
     @GetMapping("/list")
     public List<Detail_manga> getAllDetails() {

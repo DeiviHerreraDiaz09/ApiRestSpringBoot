@@ -124,7 +124,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzY4NjM4OSwiZXhwIjoxNzAzNzIyMzg5fQ.VEzgjukWDLi4JZbzQSSwxAQvyp_-W_yIrCG6TGW7CvM",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzcwNDUwNSwiZXhwIjoxNzAzNzQwNTA1fQ.V2bKoNewKQII8a_OSvSa8kKAu7qJLLh8QZyRJx6ceg4",
 									"type": "string"
 								}
 							]
@@ -164,7 +164,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/dherrerad/Desktop/asdassd.jpg"
+									"src": "/C:/Users/dherrerad/Desktop/R.png"
 								}
 							]
 						},

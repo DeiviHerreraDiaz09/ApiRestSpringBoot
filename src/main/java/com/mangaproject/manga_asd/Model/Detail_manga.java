@@ -24,8 +24,11 @@ public class Detail_manga {
     @Column(name = "fechaAlquiler", nullable = false)
     private Date fechaAlquiler;
 
-    @Column(name = "fecha_devolucion", nullable = true)
+    @Column(name = "fecha_devolucion", nullable = false)
     private Date fecha_devolucion;
+
+    @Column(name = "restore", nullable = false)
+    private boolean restore;
 
     @ManyToOne
     @JoinColumn(name = "idUserFK", nullable = false)
@@ -35,10 +38,16 @@ public class Detail_manga {
     @JoinColumn(name = "id_mangafk", nullable = false)
     private Manga idMangaFK;
 
-    public Detail_manga(Integer idDetail_ma, Date fechaAlquiler, Date fecha_devolucion, User idUserFK, Manga idMangaFK) {
+    
+
+    public Detail_manga(String idUserFKName, String idMangaFKName, Integer idDetail_ma, Date fechaAlquiler,
+            Date fecha_devolucion, boolean restore, User idUserFK, Manga idMangaFK) {
+        this.idUserFKName = idUserFKName;
+        this.idMangaFKName = idMangaFKName;
         this.idDetail_ma = idDetail_ma;
         this.fechaAlquiler = fechaAlquiler;
         this.fecha_devolucion = fecha_devolucion;
+        this.restore = restore;
         this.idUserFK = idUserFK;
         this.idMangaFK = idMangaFK;
     }
@@ -66,5 +75,7 @@ public class Detail_manga {
     public void setIdMangaFKName(String idMangaFKName) {
         this.idMangaFKName = idMangaFKName;
     }
+
+    
 
 }

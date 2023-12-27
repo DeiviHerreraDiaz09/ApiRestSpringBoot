@@ -25,7 +25,7 @@ CREATE TRIGGER after_update_detail_manga
 AFTER UPDATE ON detail_manga
 FOR EACH ROW
 BEGIN
-   IF NEW.fecha_devolucion IS NOT NULL THEN
+   IF NEW.restore IS NOT NULL THEN
       UPDATE manga
       SET amount = amount + 1
       WHERE id_manga = NEW.id_mangafk;

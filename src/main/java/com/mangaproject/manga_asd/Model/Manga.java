@@ -28,6 +28,7 @@ public class Manga {
     @Column(name = "price", nullable = false)
     private Integer price;
 
+
     public Manga(Integer idManga, String description, String image, Integer amount, Integer price) {
         this.idManga = idManga;
         this.description = description;

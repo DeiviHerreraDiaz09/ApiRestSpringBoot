@@ -60,7 +60,7 @@ public class DetailMangaController {
         Detail_manga existingDetail = detailRepository.findDetailById(id);
 
         if (existingDetail != null) {
-            existingDetail.setFecha_devolucion(updatedDetail.getFecha_devolucion());
+            existingDetail.setRestore(updatedDetail.isRestore());
 
             Detail_manga updatedDetailEntity = detailService.save(existingDetail);
 

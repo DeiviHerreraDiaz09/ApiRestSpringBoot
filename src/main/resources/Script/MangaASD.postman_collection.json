@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ed6d701f-5c11-45a3-a408-d537cd5e9eb0",
+		"_postman_id": "5b66a56c-da88-4594-9924-cf2c2cb01139",
 		"name": "MangaASD",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29313366"
+		"_exporter_id": "31959677"
 	},
 	"item": [
 		{
@@ -124,21 +124,49 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTQyNjAsImV4cCI6MTcwMzI1MDI2MH0.9TSjHRBaoS4TbSLbSrrqrF4ED33xTsMLXTSO-tMbOsc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzY4NjM4OSwiZXhwIjoxNzAzNzIyMzg5fQ.VEzgjukWDLi4JZbzQSSwxAQvyp_-W_yIrCG6TGW7CvM",
 									"type": "string"
 								}
 							]
 						},
 						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Goku\",\r\n    \"description\":\"Dragon Ball z\",\r\n    \"image\":\"imagen\",\r\n    \"amount\": 5,\r\n    \"price\": 1500\r\n    \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "amount",
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/dherrerad/Desktop/asdassd.jpg"
+								}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/mangas/add",
@@ -151,6 +179,28 @@
 								"api",
 								"mangas",
 								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer imagenes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mangas/image/asdassd.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mangas",
+								"image",
+								"asdassd.jpg"
 							]
 						}
 					},
@@ -169,7 +219,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwicm9sZSI6ImFkbWluaXN0cmFkb3IiLCJpYXQiOjE3MDMyMTM2MTgsImV4cCI6MTcwMzI0OTYxOH0.JqnJ3gjvdmBSHKOGcnoCcJ0-molR9bX6vy6RWQZpUBg",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pblVzZXJuYW1lIiwidXNlcklkIjoxLCJyb2xlIjoiYWRtaW5pc3RyYWRvciIsImlhdCI6MTcwMzY4NDMxNSwiZXhwIjoxNzAzNzIwMzE1fQ.rrRQpE03xUGqhSPS4C72b-iBKR-j9D0j4CJC9Yvmtuc",
 									"type": "string"
 								}
 							]
@@ -199,7 +249,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-09\",\r\n        \"fechaDevolucion\": \"\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        }\r\n    },\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-10\",\r\n        \"fechaDevolucion\": \"\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        }\r\n    }\r\n\r\n]\r\n",
+							"raw": "[\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-09\",\r\n        \"fechaLimite\": \"2023-16-09\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        },\r\n        \"restore\":0\r\n    },\r\n    {\r\n        \"fechaAlquiler\": \"2023-01-10\",\r\n        \"fechaLimite\": \"2023-16-09\",\r\n        \"idUserFK\": {\r\n            \"idUsuario\": 1\r\n        },\r\n        \"idMangaFK\": {\r\n            \"idManga\": 1\r\n        },\r\n        \"restore\":0\r\n    }\r\n\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,7 +279,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"fecha_devolucion\":\"2023-01-10\"\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n    \"restore\": true\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +287,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/details/3",
+							"raw": "http://localhost:8080/api/details/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -246,7 +296,7 @@
 							"path": [
 								"api",
 								"details",
-								"3"
+								"2"
 							]
 						}
 					},

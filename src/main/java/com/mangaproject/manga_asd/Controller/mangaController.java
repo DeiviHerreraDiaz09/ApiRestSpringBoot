@@ -75,9 +75,9 @@ public class MangaController {
 
     @GetMapping("/image/{imagen}")
     public ResponseEntity<FileSystemResource> getImage(@PathVariable String imagen) {
-        String photoPath = "C:\\Users\\dherrerad\\Desktop\\ApiRestSpringBoot\\src\\main\\resources\\img\\" + imagen;
+        String photoPath = "src\\main\\resources\\img\\" + imagen;
         File file = new File(photoPath);
-
+        
         log.info(file.getPath());
 
         if (file.exists()) {

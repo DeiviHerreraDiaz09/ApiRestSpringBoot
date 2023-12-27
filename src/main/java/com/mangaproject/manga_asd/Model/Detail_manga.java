@@ -24,8 +24,8 @@ public class Detail_manga {
     @Column(name = "fechaAlquiler", nullable = false)
     private Date fechaAlquiler;
 
-    @Column(name = "fecha_devolucion", nullable = false)
-    private Date fecha_devolucion;
+    @Column(name = "fechaLimite", nullable = false)
+    private Date fechaLimite;
 
     @Column(name = "restore", nullable = false)
     private boolean restore;
@@ -38,15 +38,15 @@ public class Detail_manga {
     @JoinColumn(name = "id_mangafk", nullable = false)
     private Manga idMangaFK;
 
-    
+
 
     public Detail_manga(String idUserFKName, String idMangaFKName, Integer idDetail_ma, Date fechaAlquiler,
-            Date fecha_devolucion, boolean restore, User idUserFK, Manga idMangaFK) {
+            Date fechaLimite, boolean restore, User idUserFK, Manga idMangaFK) {
         this.idUserFKName = idUserFKName;
         this.idMangaFKName = idMangaFKName;
         this.idDetail_ma = idDetail_ma;
         this.fechaAlquiler = fechaAlquiler;
-        this.fecha_devolucion = fecha_devolucion;
+        this.fechaLimite = fechaLimite;
         this.restore = restore;
         this.idUserFK = idUserFK;
         this.idMangaFK = idMangaFK;

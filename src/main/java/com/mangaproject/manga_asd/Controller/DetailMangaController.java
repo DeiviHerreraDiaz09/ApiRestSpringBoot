@@ -59,9 +59,10 @@ public class DetailMangaController {
     public ResponseEntity<Object> updateDetail(@PathVariable Integer id, @RequestBody Detail_manga updatedDetail) {
         Detail_manga existingDetail = detailRepository.findDetailById(id);
 
-        if (existingDetail != null) {
-            existingDetail.setRestore(updatedDetail.isRestore());
+        if (existingDetail != null || existingDetail.isRestore() == false) {
 
+                existingDetail.setRestore(updatedDetail.isRestore());    
+            
             Detail_manga updatedDetailEntity = detailService.save(existingDetail);
 
             return new ResponseEntity<>(updatedDetailEntity, HttpStatus.OK);
